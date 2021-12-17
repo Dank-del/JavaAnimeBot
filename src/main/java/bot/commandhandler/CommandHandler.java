@@ -1,4 +1,5 @@
 package bot.commandhandler;
+import bot.commands.AnimeCommand;
 import bot.commands.StartCommand;
 import config.ParseConfig;
 import org.apache.logging.log4j.LogManager;
@@ -29,6 +30,8 @@ public class CommandHandler extends TelegramLongPollingCommandBot {
         // super(botUsername);
 
         register(new StartCommand());
+        register(new AnimeCommand());
+
         try {
             config =  new ParseConfig("config.ini");
         } catch (IOException e) {
